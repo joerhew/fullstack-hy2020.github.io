@@ -132,7 +132,7 @@ export default filterReducer
 
 We can create the actual reducer for our application by combining the two existing reducers with the [combineReducers](https://redux.js.org/api/combinereducers) function.
 
-Let's define the combined reducer in the <i>main.jsx</i> file:
+Let's define the combined reducer in the <i>index.js</i> file:
 
 ```js
 import React from 'react'
@@ -188,7 +188,7 @@ const reducer = combineReducers({
 
 The state of the store defined by the reducer above is an object with two properties: <i>notes</i> and <i>filter</i>. The value of the <i>notes</i> property is defined by the <i>noteReducer</i>, which does not have to deal with the other properties of the state. Likewise, the <i>filter</i> property is managed by the <i>filterReducer</i>.
 
-Before we make more changes to the code, let's take a look at how different actions change the state of the store defined by the combined reducer. Let's add the following to the <i>main.jsx</i> file:
+Before we make more changes to the code, let's take a look at how different actions change the state of the store defined by the combined reducer. Let's add the following to the <i>index.js</i> file:
 
 ```js
 import { createNote } from './reducers/noteReducer'
@@ -269,7 +269,7 @@ And now it returns only its field <i>notes</i>
 const notes = useSelector(state => state.notes)
 ```
 
-Let's extract the visibility filter into its own <i>src/components/VisibilityFilter.jsx</i> component:
+Let's extract the visibility filter into its own <i>src/components/VisibilityFilter.js</i> component:
 
 ```js
 import { filterChange } from '../reducers/filterReducer'
